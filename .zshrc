@@ -27,7 +27,6 @@ if [[ -n $(find /etc -maxdepth 1 -name "*-release" -print) ]]; then
     alias lsexplicit="pacman -Qetq"
     alias lsaur="pacman -Qmq"
     alias upvote="for i in `pacman -Qqm`; do ssh aur@aur.archlinux.org vote $i; done"
-    alias updatemirror="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
   elif grep -q -i debian $release_file; then
     alias yolo="sudo apt update && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove"
   fi
