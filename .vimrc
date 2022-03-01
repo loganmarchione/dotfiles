@@ -1,10 +1,15 @@
-"
-"All of this just so I can have colors
-"
+"""
+""" All of this, just so I can have colors
+"""
+
+" Create vim directory
+if !isdirectory($HOME.'/.vim/autoload/')
+    call mkdir($HOME.'/.vim/autoload/', 'p', 0700)
+endif
 
 "Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob($HOME.'/.vim/autoload/plug.vim'))
+  silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 endif
 
 " Run PlugInstall if there are missing plugins
@@ -21,7 +26,9 @@ Plug 'arcticicestudio/nord-vim'
 "Initialize plugin system
 call plug#end()
 
-
+"""
+""" The rest of the config file
+"""
 
 
 "General
