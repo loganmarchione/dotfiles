@@ -11,6 +11,7 @@ set number              " show line numbers
 set ruler               " show ruler
 set background=dark     " set a dark background
 set scrolloff=5         " show at least 5 lines above/below while scrolling
+colorscheme nord        " https://github.com/arcticicestudio/nord-vim
 
 "Searching
 set ignorecase          " ignore case when searching
