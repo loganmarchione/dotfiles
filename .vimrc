@@ -7,7 +7,7 @@ if !isdirectory($HOME.'/.vim/autoload/')
     call mkdir($HOME.'/.vim/autoload/', 'p', 0700)
 endif
 
-" Install vim-plug if not found
+" Install vim-plug if not found (you'll obviously need to have curl installed on the host)
 if empty(glob($HOME.'/.vim/autoload/plug.vim'))
   silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
 endif
