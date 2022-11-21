@@ -21,7 +21,11 @@ autocmd VimEnter *
 " Specify a directory for plugins 
 call plug#begin('~/.vim/plugged')
  
+" https://github.com/arcticicestudio/nord-vim
 Plug 'arcticicestudio/nord-vim'
+
+" https://github.com/dracula/vim
+Plug 'dracula/vim', { 'as': 'dracula' }
  
 " Initialize plugin system
 call plug#end()
@@ -44,7 +48,7 @@ set number              " show line numbers
 set ruler               " show ruler
 set background=dark     " set a dark background
 set scrolloff=5         " show at least 5 lines above/below while scrolling
-colorscheme nord        " https://github.com/arcticicestudio/nord-vim
+colorscheme dracula     " theme from above
 
 " Searching
 set ignorecase          " ignore case when searching
