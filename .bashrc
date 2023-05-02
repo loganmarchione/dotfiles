@@ -28,17 +28,6 @@ GRAY_B="\e[47m"
 WHITE_F="\e[97m"
 WHITE_B="\e[107m"
 
-# Set editor, prefer vim over vi
-if [[ -x "$(command -v vim)" ]]; then
-  export VISUAL=vim
-  export EDITOR="$VISUAL"
-elif [[ -x "$(command -v vi)" ]]; then
-  export VISUAL=vi
-  export EDITOR="$VISUAL"
-else
-   printf "Please set an editor, vim and/or vi are not installed"
-fi
-
 # PS1 for specific shells
 if [[ "$SHELL" == "/bin/bash" ]];then
   # Unicode symbols
@@ -73,26 +62,9 @@ else
   PS1="\n\${PWD}\n\${username}@\${hostname}\n${RED_F} >>${NORM} "
 fi
 
-# Aliases for all distributions
-alias ll="ls -laF --color=auto"
-alias bt100="wget http://cachefly.cachefly.net/100mb.test -O /dev/null"
-alias bt400="wget http://cachefly.cachefly.net/400mb.test -O /dev/null"
-alias clear="/usr/bin/clear"
-
-# Aliases for specific distributions
-release_file="/etc/*-release"
-if [[ -n $(find /etc -maxdepth 1 -name "*-release" -print) ]]; then
-  if grep -q -i archlinux $release_file; then
-    alias yolo="sudo pacman -Syu --noconfirm && yay -Syua --devel --noconfirm && flatpak update -y"
-    alias lsorphans="pacman -Qdtq"
-    alias lsexplicit="pacman -Qetq"
-    alias lsaur="pacman -Qmq"
-    alias upvote="for i in `pacman -Qqm`; do ssh aur@aur.archlinux.org vote $i; done"
-  elif grep -q -i debian $release_file; then
-    alias yolo="sudo apt update && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove"
-  fi
-else
-  printf "Release file not found, could not set distro-specific aliases."
+# Load common aliases file
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
 
 # If a display is connected, startx
