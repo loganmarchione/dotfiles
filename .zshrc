@@ -9,40 +9,9 @@ bindkey -e
 # Report CPU usage for commands running longer than 10 seconds
 REPORTTIME=10
 
-# Aliases that add colors
-alias diff="diff --color=auto"
-alias grep="grep --color=auto"
-alias ls="ls --color=auto"
-alias ll="ls -laF --color=auto"
-alias dmesg="dmesg --color"
-alias ip="ip -color=auto"
-
-# Aliases for specific distributions
-release_file="/etc/os-release"
-if [[ -n $(find /etc -maxdepth 1 -name "*-release" -print) ]]; then
-  if grep -q -i archlinux $release_file; then
-    alias yolo="sudo pacman -Syu --noconfirm && yay -Syua --devel --noconfirm && flatpak update -y && flatpak uninstall --unused -y"
-    alias lsorphans="pacman -Qtdq"
-    alias rmorphans="pacman -Qtdq | sudo pacman -Rns -"
-    alias lsexplicit="pacman -Qetq"
-    alias lsaur="pacman -Qmq"
-    alias upvote="for i in `pacman -Qqm`; do ssh aur@aur.archlinux.org vote $i; done"
-  elif grep -q -i debian $release_file; then
-    alias yolo="sudo apt update && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove"
-  fi
-else
-  printf "Release file not found, could not set distro-specific aliases."
-fi
-
-# Editor
-if [[ -x "$(command -v vim)" ]]; then
-  export VISUAL=vim
-  export EDITOR="$VISUAL"
-elif [[ -x "$(command -v vi)" ]]; then
-  export VISUAL=vi
-  export EDITOR="$VISUAL"
-else
-   printf "Please set an editor, vim and/or vi are not installed"
+# Load common aliases file
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
 fi
 
 # Autoload
