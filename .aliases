@@ -52,6 +52,9 @@ if grep -q -i archlinux $release_file; then
 ########################################
 elif grep -q -i debian $release_file; then
   alias yolo="sudo apt update && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove"
+########################################
+### Others
+########################################
 else
   printf "Release file not found, could not set distro-specific aliases."
 fi
