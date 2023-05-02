@@ -26,6 +26,12 @@ else
    printf "Please set an editor, vim and/or vi are not installed"
 fi
 
+########################################
+### Miscellaneous
+########################################
+alias k="kubectl"
+alias tf="terraform"
+
 ################################################################################
 ### Aliases for specific distributions
 ################################################################################
