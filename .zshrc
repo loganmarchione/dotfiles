@@ -27,3 +27,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
+
+# Use the pre-configured p10k configuration file
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
