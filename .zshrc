@@ -9,6 +9,11 @@ bindkey -e
 # Report CPU usage for commands running longer than 10 seconds
 REPORTTIME=10
 
+# Set PATH so it includes user's private bin, if it exists
+if [[ -d "$HOME/bin" ]] ; then
+  PATH=":$PATH:$HOME/bin"
+fi
+
 # Load common aliases file
 if [ -f ~/.aliases ]; then
   source ~/.aliases
