@@ -52,7 +52,7 @@ if grep -q -i archlinux $release_file; then
 ### Debian-based
 ########################################
 elif grep -q -i debian $release_file; then
-  alias yolo="sudo apt update && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove"
+  alias yolo="sudo apt update && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y"
 ########################################
 ### Others
 ########################################
