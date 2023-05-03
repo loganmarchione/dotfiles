@@ -15,6 +15,11 @@ else
   printf "Could not find FZF completions!"
 fi
 
+# Custom prompt
+hostname=$(uname -n)
+username=$(/usr/bin/id -un)
+PS1="\n\${PWD}\n\${username}@\${hostname}\n> "
+
 # Load common aliases file
 if [ -f ~/.aliases ]; then
   . ~/.aliases
