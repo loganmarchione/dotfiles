@@ -28,17 +28,6 @@ plugins=(fzf git)
 # fzf
 export FZF_DEFAULT_OPTS='--height 30% --border'
 
-release_file="/etc/os-release"
-if grep -q -i archlinux $release_file; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-elif grep -q -i debian $release_file; then
-  source /usr/share/doc/fzf/examples/key-bindings.zsh
-  source /usr/share/doc/fzf/examples/completion.zsh
-else
-  printf "Could not find FZF completions!"
-fi
-
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
