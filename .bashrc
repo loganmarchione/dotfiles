@@ -5,6 +5,3 @@
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
-# fzf
-export FZF_DEFAULT_OPTS='--height 30% --border'
-
