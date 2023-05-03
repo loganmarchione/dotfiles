@@ -25,6 +25,9 @@ zstyle ':omz:update' frequency 13
 # Plugins
 plugins=(fzf git)
 
+# fzf
+export FZF_DEFAULT_OPTS='--height 30% --border'
+
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
