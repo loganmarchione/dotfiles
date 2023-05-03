@@ -5,8 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Bindkeys
-bindkey -e
+# Bindkeys to vi
+bindkey -v
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -27,8 +27,6 @@ plugins=(fzf git)
 
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
-
-# User configuration goes here
 
 # Load common aliases file
 if [ -f ~/.aliases ]; then
