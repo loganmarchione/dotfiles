@@ -31,7 +31,6 @@ fi
 ########################################
 alias k="kubectl"
 alias tf="terraform"
-export FZF_DEFAULT_OPTS='--height 30% --border'
 
 ################################################################################
 ### Aliases for specific distributions
