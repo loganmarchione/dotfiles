@@ -23,7 +23,7 @@ zstyle ':omz:update' mode auto        # update automatically without asking
 zstyle ':omz:update' frequency 13
 
 # Plugins
-plugins=(fzf git)
+plugins=(docker-compose fzf git)
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 30% --border'
