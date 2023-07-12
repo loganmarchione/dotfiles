@@ -31,11 +31,20 @@ fi
 ########################################
 alias k="kubectl"
 alias tf="terraform"
+alias cls="clear"
+
+# Python HTTP server
+function pyserver() {
+    local port=${1:-8000}
+    python3 -m http.server "$port"
+}
+# pyserver           # Starts the server on port 8000
+# pyserver 9000      # Starts the server on port 9000
+alias pyserver="pyserver"
 
 ################################################################################
 ### Aliases for specific distributions
 ################################################################################
-
 release_file="/etc/os-release"
 
 ########################################
