@@ -10,7 +10,6 @@ if grep -q -i archlinux $release_file; then
   source /usr/share/fzf/completion.bash
 elif grep -q -i debian $release_file; then
   source /usr/share/doc/fzf/examples/key-bindings.bash
-  source /usr/share/doc/fzf/examples/completion.bash
 else
   printf "Could not find FZF completions!"
 fi
