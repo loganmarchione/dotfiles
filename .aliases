@@ -1,11 +1,10 @@
 ################################################################################
-### Aliases for all distributions
+# Aliases for all distributions
 ################################################################################
 
 ########################################
-### Aliases that add colors
+# Aliases that add colors
 ########################################
-
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
@@ -14,7 +13,7 @@ alias dmesg="dmesg --color"
 alias ip="ip -color=auto"
 
 ########################################
-### Default editor
+# Default editor
 ########################################
 if [[ -x "$(command -v vim)" ]]; then
   export VISUAL=vim
@@ -27,13 +26,17 @@ else
 fi
 
 ########################################
-### Miscellaneous
+# Miscellaneous
 ########################################
+alias cls="clear"
+alias jc="journalctl"
 alias k="kubectl"
 alias tf="terraform"
-alias cls="clear"
+alias sc="systemctl"
 
+####################
 # Python HTTP server
+####################
 function pyserver() {
     local port=${1:-8000}
     python3 -m http.server "$port"
@@ -42,13 +45,18 @@ function pyserver() {
 # pyserver 9000      # Starts the server on port 9000
 alias pyserver="pyserver"
 
+####################
+# show disks (pretty)
+####################
+disks() {lsblk -o NAME,MOUNTPOINT,FSTYPE,FSUSE%,SIZE}
+
 ################################################################################
-### Aliases for specific distributions
+# Aliases for specific distributions
 ################################################################################
 release_file="/etc/os-release"
 
 ########################################
-### Arch-based
+# Arch-based
 ########################################
 if grep -q -i archlinux $release_file; then
   alias yolo="sudo pacman -Syu --noconfirm && yay -Syua --devel --noconfirm && flatpak update -y && flatpak uninstall --unused -y"
@@ -58,12 +66,12 @@ if grep -q -i archlinux $release_file; then
   alias lsaur="pacman -Qmq"
   alias upvote="for i in `pacman -Qqm`; do ssh aur@aur.archlinux.org vote $i; done"
 ########################################
-### Debian-based
+# Debian-based
 ########################################
 elif grep -q -i debian $release_file; then
   alias yolo="sudo apt update && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y"
 ########################################
-### Others
+# Others
 ########################################
 else
   printf "Release file not found, could not set distro-specific aliases."
