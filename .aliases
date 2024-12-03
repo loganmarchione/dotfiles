@@ -48,7 +48,9 @@ alias pyserver="pyserver"
 ####################
 # show disks (pretty)
 ####################
-disks() {lsblk -o NAME,MOUNTPOINT,FSTYPE,FSUSE%,SIZE}
+disks() {
+  lsblk -o NAME,MOUNTPOINT,FSTYPE,FSUSE%,SIZE
+}
 
 ################################################################################
 # Aliases for specific distributions
