@@ -11,6 +11,7 @@ alias ls="ls --color=auto"
 alias ll="ls -laF --color=auto"
 alias dmesg="dmesg --color"
 alias ip="ip -color=auto"
+alias tree="tree -C"
 
 ########################################
 # Default editor
