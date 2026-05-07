@@ -1,0 +1,150 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  ////////////////////////////////////////
+  // Panels
+  ////////////////////////////////////////
+  "agent": {
+    "button": true,                               // Show/hide status bar icon
+    "dock": "right",                              // Where to dock
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "collaboration_panel": {
+    "button": false,                              // Show/hide status bar icon
+    "dock": "right",                              // Where to dock
+  },
+  "debugger": {
+    "button": false,                              // Show/hide status bar icon
+    "dock": "bottom",                             // Where to dock
+  },
+  "git_panel": {
+    "button": true,                               // Show/hide status bar icon
+    "dock": "right",                              // Where to dock
+  },
+  "outline_panel": {
+    "button": false,                              // Show/hide status bar icon
+    "dock": "left",                               // Where to dock
+    "git_status": true,                           // Indicate new/updated files
+    "indent_guides": {
+      "show": "always"                            // When to show indent guides
+    },
+  },
+  "project_panel": {
+    "button": true,                               // Show/hide status bar icon
+    "dock": "left",                               // Where to dock
+    "git_status": true,                           // Indicate new/updated files
+    "indent_guides": {
+      "show": "always"                            // When to show indent guides
+    },
+  },
+  "terminal": {
+    "button": true,                               // Show/hide status bar icon
+    "dock": "bottom",                             // Where to dock
+  },
+  ////////////////////////////////////////
+  // User Interface
+  ////////////////////////////////////////
+  ////////////////////
+  // Fonts and themes
+  ////////////////////
+  "buffer_font_size": 16,
+  "buffer_font_family": ".ZedMono",
+  "buffer_font_features": {
+    "calt": false                                 // Disable ligatures (!= will become ≠)
+  },
+  "ui_font_size": 20,
+  "ui_font_family": ".ZedMono",
+  "theme": {
+    "mode": "dark",                               // Default theme
+    "light": "One Light",
+    "dark": "Ayu Dark",
+  },
+  "icon_theme": {
+    "mode": "dark",                               // Default theme
+    "light": "VSCode Icons for Zed (Light)",
+    "dark": "VSCode Icons for Zed (Dark)",
+  },
+  ////////////////////
+  // Misc
+  ////////////////////
+  "base_keymap": "VSCode",
+  "colorize_brackets": true,                      // Turn on colorization of brackets in editors
+  "show_whitespaces": "all",                      // Visually show tabs and spaces
+  "hard_tabs": false,                             // Whether to indent lines using tab characters or multiple spaces
+  "formatter": "auto",                            // How to perform a buffer format
+  "format_on_save": "off",                        // Whether or not to perform a buffer format before saving
+  "cursor_shape": "bar",
+	"cursor_blink": true,
+  "indent_guides": {
+    "enabled": true,                              // When to show indent guides
+    "coloring": "indent_aware",                   // Indent guide coloring
+    "background_coloring": "disabled",            // Background coloring
+  },
+  "git": {
+    "git_gutter": "tracked_files",                // Whether or not to show the git gutter
+    "inline_blame": {
+      "enabled": true                             // Whether or not to show git blame information inline, on the currently focused line
+    },
+  },
+  "gutter": {
+    "line_numbers": true,                         // Show/hide line numbers in the gutter
+  },
+  "minimap": {
+    "show": "auto",                               // When to show the minimap
+    "thumb": "always",                            // When to show thumb
+    "thumb_border": "full",
+    "current_line_highlight": "line",             // How to highlight the current line in the minimap
+  },
+  "scrollbar": {
+    "show": "auto",                               // When to show indent
+    "cursors": true,                              // Whether to show cursor positions in the scrollbar
+    "git_diff": true,                             // Whether to show git diff indicators in the scrollbar
+    "search_results": true,                       // Whether to show buffer search results in the scrollbar
+    "selected_symbol": true,                      // Whether to show selected symbol occurrences in the scrollbar
+    "selected_text": true,                        // Whether to show selected text occurrences in the scrollbar
+  },
+  "status_bar": {
+    "active_language_button": true,               // Whether to show the active buffer's language
+    "cursor_position_button": true,               // Whether to show the cursor's position
+  },
+  "tab_bar": {
+    "show": true,                                 // Show/hide the tab bar
+    "show_nav_history_buttons": false,            // Show/hide history buttons on tab bar (< >)
+    "show_tab_bar_buttons": true                  // Show hide buttons (new, split, zoom)
+  },
+  "tabs": {
+    "git_status": true,                           // Color to show git status
+    "file_icons": true,                           // Icon showing file type
+  },
+  "title_bar": {
+    "show_sign_in": false,                        // Show/hide sign-in button
+  },
+  ////////////////////////////////////////
+  // Extensions
+  ////////////////////////////////////////
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "dracula": true,
+    "html": true,
+    "java": false,
+    "material-icon-theme": true,
+    "php": false,
+    "ruby": false,
+    "terraform": false,
+    "vscode-icons-zed": true,
+  },
+  ////////////////////////////////////////
+  // Telemetry
+  ////////////////////////////////////////
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
