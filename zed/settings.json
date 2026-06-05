@@ -132,6 +132,7 @@
   "auto_install_extensions": {
     "dockerfile": true,
     "dracula": true,
+    "harper": true,
     "html": true,
     "java": false,
     "material-icon-theme": true,
