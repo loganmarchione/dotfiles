@@ -62,12 +62,25 @@ release_file="/etc/os-release"
 # Arch-based
 ########################################
 if grep -q -i archlinux $release_file; then
-  alias yolo="sudo pacman -Syu --noconfirm && yay -Syua --devel --noconfirm && flatpak update -y && flatpak uninstall --unused -y"
   alias lsorphans="pacman -Qtdq"
-  alias rmorphans="pacman -Qtdq | sudo pacman -Rns -"
+  rmorphans() {
+    local orphans
+    orphans=$(pacman -Qtdq)
+
+    if [[ -n $orphans ]]; then
+        echo "$orphans" | sudo pacman -Rns -
+    fi
+  }
   alias lsexplicit="pacman -Qetq"
   alias lsaur="pacman -Qmq"
   alias upvote="for i in `pacman -Qqm`; do ssh aur@aur.archlinux.org vote $i; done"
+  yolo() {
+    sudo pacman -Syu --noconfirm &&
+    flatpak update -y &&
+    flatpak uninstall --unused -y &&
+    yay -Syua --devel --cleanmenu --diffmenu --editmenu --removemake &&
+    rmorphans
+  }
 ########################################
 # Debian-based
 ########################################
