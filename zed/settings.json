@@ -76,7 +76,7 @@
   ////////////////////
   "base_keymap": "VSCode",
   "colorize_brackets": true,                      // Turn on colorization of brackets in editors
-  "show_whitespaces": "all",                      // Visually show tabs and spaces
+  "show_whitespaces": "boundary",                 // Visually show tabs and spaces
   "hard_tabs": false,                             // Whether to indent lines using tab characters or multiple spaces
   "formatter": "auto",                            // How to perform a buffer format
   "format_on_save": "off",                        // Whether or not to perform a buffer format before saving
